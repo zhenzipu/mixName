@@ -15,7 +15,25 @@ export const mainRouter = {
         access: true
       },
       component: () => import("@/views/home/home.vue")
-    }
+    },
+    // 详情
+      {
+        path: "detail/:id",
+        name: "detail",
+        component: () => import("@/views/detail/detail.vue")
+      },
+      // 快讯详情
+        {
+          path: "news_detail/:id",
+          name: "news_detail",
+          component: () => import("@/views/detail/news.vue")
+        },
+        // 热点资讯
+          {
+            path: "hot/:id",
+            name: "hot",
+            component: () => import("@/views/detail/hot.vue")
+          },
   ]
 };
 export const MenuRouter = [
