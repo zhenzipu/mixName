@@ -13,7 +13,7 @@
   <div>
     <header-main/>
     <div class="content-main">
-      <div class="content-con">
+      <div class="content-con" :style="{width:$route.name=='consult'?'100%':'1200px'}">
         <router-view></router-view>
       </div>
     </div>
@@ -45,7 +45,9 @@ export default {
     // }
   },
   methods: {},
-  mounted() {},
+  mounted() {
+    console.log('ss',this.$route.name)
+  },
   created() {}
 };
 </script>

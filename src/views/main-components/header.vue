@@ -142,8 +142,8 @@ export default {
           name: "latest"
         },
         {
-          title: "新闻",
-          name: "news"
+          title: "行业资讯",
+          name: "industry"
         }
       ]
     };

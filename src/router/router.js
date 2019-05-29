@@ -16,31 +16,24 @@ export const mainRouter = {
       },
       component: () => import("@/views/home/home.vue")
     },
-    // 详情
+    // 域名详情
       {
-        path: "detail/:id",
-        name: "detail",
-        component: () => import("@/views/detail/detail.vue")
+        path: "domain/:id",
+        name: "domain",
+        component: () => import("@/views/detail/domain.vue")
       },
       // 快讯详情
         {
-          path: "news_detail/:id",
-          name: "news_detail",
+          path: "news/:id",
+          name: "news",
           component: () => import("@/views/detail/news.vue")
         },
-        // 热点资讯
-          {
-            path: "hot/:id",
-            name: "hot",
-            component: () => import("@/views/detail/hot.vue")
-          },
   ]
 };
 export const MenuRouter = [
     // 精品域名
     {
-      path: "boutique",
-      redirect: "/boutique",
+      path: "/boutique",
       component: Main,
       children: [
         {
@@ -52,8 +45,7 @@ export const MenuRouter = [
     },
     // 平价域名
     {
-      path: "flat",
-      redirect: "/flat",
+      path: "/flat",
       component: Main,
       children: [
         {
@@ -65,8 +57,7 @@ export const MenuRouter = [
     },
     // 咨询
     {
-      path: "consult",
-      redirect: "/consult",
+      path: "/consult",
       component: Main,
       children: [
         {
@@ -78,8 +69,7 @@ export const MenuRouter = [
     },
     // 快讯
     {
-      path: "latest",
-      redirect: "/latest",
+      path: "/latest",
       component: Main,
       children: [
         {
@@ -89,16 +79,15 @@ export const MenuRouter = [
         }
       ]
     },
-    // 新闻
+    // 行业资讯
     {
-      path: "news",
-      redirect: "/news",
+      path: "/industry",
       component: Main,
       children: [
         {
           path: "index",
-          name: "news",
-          component: () => import("@/views/news/news.vue")
+          name: "industry",
+          component: () => import("@/views/industry/industry.vue")
         }
       ]
     },
