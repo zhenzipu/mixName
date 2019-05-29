@@ -73,7 +73,7 @@ const app = {
       // return new Promise(resolve => {
       //     state
       //       .dispatch("ajaxPost", {
-      //         url: API.user.permission + Cookies.get("sso.jd.com")
+      //         url: API.user.permission + Cookies.get("aaa")
       //       })
       //       .then(res => {
       //         let objData = res.data;

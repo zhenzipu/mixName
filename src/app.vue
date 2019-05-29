@@ -11,8 +11,6 @@ export default {
   },
   created() {},
   mounted() {
-    // this.$store.dispatch("getUserPermission");
-    // this.$store.commit("setLocal");
   },
   beforeDestroy() {},
   methods: {}
