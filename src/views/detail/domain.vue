@@ -22,6 +22,7 @@
     background: linear-gradient(to right, blue, purple);
   }
   .btn-more {
+    cursor: pointer;
     width: 70px;
     height: 30px;
     line-height: 30px;
@@ -68,6 +69,7 @@
       height: 170px;
       border-radius: 5px;
       position: relative;
+      cursor: pointer;
       p:nth-child(1) {
         font-size: 50px;
         line-height: 170px;
@@ -153,7 +155,6 @@
         text-align: center;
       }
     }
-
     .detail-name {
       color: #333;
       font-size: 20px;
@@ -165,6 +166,16 @@
         color: #4e14d6;
         font-size: 18px;
         line-height: 26px;
+      }
+    }
+    .detail-link {
+      float: right;
+      list-style: none;
+      li {
+        float: left;
+        text-align: center;
+        width: 80px;
+        cursor: pointer;
       }
     }
     .detail-text {
@@ -188,7 +199,7 @@
         cursor: pointer;
       }
       .detail-last {
-        color: #ccc;
+        color: #a1a1a1;
         margin-top: 20px;
         span {
           display: inline-block;
@@ -199,14 +210,34 @@
       }
     }
   }
+}
 
+.buy-con {
+  &-name {
+    color: #333;
+    font-size: 20px;
+    line-height: 40px;
+    padding-left: 30px;
+  }
+  &-price {
+    font-size: 14px;
+    b {
+      color: #4e14d6;
+      font-size: 18px;
+      line-height: 26px;
+    }
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+// 购买模态框
   .btn-buy-modal {
+    margin: 0 auto;
     width: 300px;
     height: 50px;
     line-height: 50px;
     color: #fff;
     text-align: center;
-    background: #4e14d6;
+    background: linear-gradient(to right, blue, purple);
     border-radius: 5px;
     font-size: 14px;
     margin-top: 15px;
@@ -237,17 +268,31 @@
           <span>{{detail.count}}次浏览</span>
         </p>
       </div>
+      <ul class="detail-link">
+        <li>
+          <img src="@/images/phone.png" alt>
+          <p>发送到手机</p>
+        </li>
+        <li>
+          <img src="@/images/star.png" alt>
+          <p>收藏</p>
+        </li>
+        <li>
+          <img src="@/images/link.png" alt>
+          <p>分享</p>
+        </li>
+      </ul>
     </div>
     <div class="home-three">
       <div class="three-l card">
         <p class="card-title">
           精品
-          <span class="btn-more">more</span>
+          <span class="btn-more" @click="turnTo('boutique')">more</span>
         </p>
         <div class="card-con">
           <ul class="boutique-list">
             <li v-for="(item,idx) in aBoutique" :key="idx">
-              <div class="boutique-list-card">
+              <div class="boutique-list-card" @click="turnTo('domain',idx)">
                 <p>{{item.name}}</p>
               </div>
               <div class="boutique-list-text">
@@ -270,10 +315,10 @@
     </div>
 
     <Modal v-model="bModal" :width="400">
-      <div class="modal-con">
+      <div class="buy-con">
         <h2 style="textAlign:center;">填写购买信息</h2>
-        <p class="detail-name">{{detail.name}}</p>
-        <p class="detail-price">
+        <p class="buy-con-name">{{detail.name}}</p>
+        <p class="buy-con-price">
           价格:
           <b>￥{{detail.num}}</b>
         </p>
@@ -299,7 +344,7 @@
             ></Input>
           </FormItem>
         </Form>
-        <p class="btn-buy-modal">提交购买信息</p>
+        <p class="btn-buy-modal" @click="handleSubmit">提交购买信息</p>
       </div>
       <p slot="footer"></p>
     </Modal>
@@ -383,6 +428,18 @@ export default {
     },
     handleOpenModal() {
       this.bModal = true;
+    },
+    turnTo(name, id) {
+      let params = null;
+      if (id) {
+        params = {
+          id: id
+        };
+      }
+      this.$router.push({
+        name: name,
+        params: params
+      });
     }
   },
   mounted() {}

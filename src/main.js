@@ -21,6 +21,6 @@ new Vue({
   store: store,
   render: h => h(App),
   data: {},
-  mounted() {},
-  created() {}
+  mounted() { },
+  created() { }
 });

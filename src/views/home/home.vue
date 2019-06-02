@@ -32,6 +32,7 @@
     font-size: 12px;
     color: #4e14d6;
     margin-top: 10px;
+    cursor: pointer;
   }
   .btn-info {
     color: #999;
@@ -80,6 +81,7 @@
       height: 190px;
       border-radius: 5px;
       position: relative;
+      cursor: pointer;
       p:nth-child(1) {
         font-size: 50px;
         line-height: 190px;
@@ -172,6 +174,7 @@
   .domain-list {
     padding-left: 20px;
     li {
+      cursor: pointer;
       list-style: none;
       float: left;
       width: 170px;
@@ -256,6 +259,32 @@
       width: 290px;
     }
   }
+  position: relative;
+  .fix-con {
+    width: 120px;
+    height: 380px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    position: fixed;
+    right: -10px;
+    top: 120px;
+    text-align: center;
+    padding-top: 20px;
+    p:nth-child(1) {
+      font-size: 16px;
+      line-height: 30px;
+      color: #4407d3;
+    }
+    p:nth-child(2) {
+      font-size: 12px;
+      color: #999999;
+    }
+    ul {
+      margin-top: 30px;
+      list-style: none;
+    }
+  }
 }
 </style>
 
@@ -283,6 +312,38 @@
         </div>
       </CarouselItem>
     </Carousel>
+    <!-- 定位元素 -->
+    <div class="fix-con">
+      <p>13522865253</p>
+      <p>7/24小时服务热线</p>
+      <ul>
+        <li>
+          <a>
+            <img src="@/images/fix_icon1.png" alt>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="@/images/fix_icon2.png" alt>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="@/images/fix_icon3.png" alt>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="@/images/fix_icon4.png" alt>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="@/images/fix_icon5.png" alt>
+          </a>
+        </li>
+      </ul>
+    </div>
     <div class="home-two">
       <div class="two-l">
         <!-- 每日特价 -->
@@ -291,7 +352,7 @@
           <div class="card-con">
             <ul class="shop-list">
               <li v-for="(item,idx) in aBargain" :key="idx">
-                <div class="shop-list-card">
+                <div class="shop-list-card" @click="turnTo('domain',idx)">
                   <p>{{item.name}}</p>
                   <p>{{item.status?'倒计时：'+item.endTime:'已结束'}}</p>
                   <span class="finish-tip" v-if="!item.status">已售</span>
@@ -312,7 +373,7 @@
           <p class="card-title">推荐域名</p>
           <div class="card-con">
             <ul class="domain-list">
-              <li v-for="(item,idx) in aDomain" :key="idx">
+              <li v-for="(item,idx) in aDomain" :key="idx" @click="turnTo('domain',idx)">
                 <span>{{item.name}}</span>
               </li>
             </ul>
@@ -356,12 +417,12 @@
       <div class="three-l card">
         <p class="card-title">
           精品
-          <span class="btn-more">more</span>
+          <span class="btn-more"  @click="turnTo('boutique')">more</span>
         </p>
         <div class="card-con">
           <ul class="boutique-list">
             <li v-for="(item,idx) in aBoutique" :key="idx">
-              <div class="boutique-list-card">
+              <div class="boutique-list-card" @click="turnTo('domain',idx)">
                 <p>{{item.name}}</p>
               </div>
               <div class="boutique-list-text">
@@ -378,7 +439,7 @@
       <div class="three-r card">
         <p class="card-title">
           快讯
-          <span class="btn-more">more</span>
+          <span class="btn-more"  @click="turnTo('latest')">more</span>
         </p>
         <div class="card-con article">
           <p class="article-title">{{aArticle[0].title}}</p>
@@ -420,12 +481,12 @@
     <div class="flat card">
       <p class="card-title">
         平价域名
-        <span class="btn-more">more</span>
+        <span class="btn-more" @click="turnTo('flat')">more</span>
       </p>
       <div class="card-con">
         <ul class="flat-list">
           <li v-for="(item,idx) in aFlat" :key="idx">
-            <div class="flat-list-card">
+            <div class="flat-list-card" @click="turnTo('domain',idx)">
               <p>{{item.name}}</p>
             </div>
             <div class="flat-list-text">
@@ -600,6 +661,18 @@ export default {
   methods: {
     handleSubmit() {
       console.log("a", this.objForm);
+    },
+    turnTo(name, id) {
+      let params = null;
+      if (id) {
+        params = {
+          id: id
+        };
+      }
+      this.$router.push({
+        name: name,
+        params: params
+      });
     }
   },
   mounted() {}

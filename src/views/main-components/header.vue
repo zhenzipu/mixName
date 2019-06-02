@@ -95,7 +95,7 @@
       </a>
       <ul class="head-menu">
         <li
-          :class="idx==actIdx?'act-menu':''"
+          :class="item.name==$route.name?'act-menu':''"
           v-for="(item,idx) in aMenu"
           :key="idx"
           @click="turnTo(item,idx)"
@@ -104,13 +104,13 @@
       <div class="search-con">
         <input class="search-input" type="text" placeholder="请输入bit、coin、chaint等关键字搜索">
       </div>
-      <div class="head-btn">
+      <!-- <div class="head-btn">
         <span>登录</span>
         <span>注册</span>
       </div>
       <div class="lan-con">
         <img src="@/images/lan.png" alt>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

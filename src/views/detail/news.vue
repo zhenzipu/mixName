@@ -32,6 +32,7 @@
     font-size: 12px;
     color: #4e14d6;
     margin-top: 10px;
+    cursor: pointer;
   }
   .btn-info {
     color: #999;
@@ -121,7 +122,7 @@
     margin-top: 15px;
     > div {
       display: inline-block;
-      vertical-align:top;
+      vertical-align: top;
       // float: left;
     }
     .three-l {
@@ -135,20 +136,67 @@
       width: 290px;
     }
   }
-  .article{
-    h2{
+  .article {
+    h2 {
       font-size: 30px;
       line-height: 60px;
-    text-align: center
+      text-align: center;
     }
-    p{
+    p {
       line-height: 30px;
       font-size: 16px;
       margin-bottom: 20px;
     }
-    img{
+    img.article-img {
       width: 800px;
       margin: 10px auto;
+    }
+    .article-btn {
+      color: #999999;
+      line-height: 24px;
+      margin: 10px 0;
+      > span {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .share-btn {
+        cursor: pointer;
+        height: 24px;
+        padding: 3px;
+        margin-left: 40px;
+        .share-con {
+          float: right;
+          display: none;
+          img {
+            display: inline-block;
+            margin: 0 10px;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      .share-btn:hover {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 120px;
+        .share-con {
+          display: block;
+        }
+      }
+      .btn_zan {
+        cursor: pointer;
+        line-height: 20px;
+        font-size: 14px;
+        .icon_zan {
+          width: 20px;
+          height: 20px;
+          margin-left: 20px;
+          display: inline-block;
+          background: url("../../images/zan.png") no-repeat;
+          background-size: 100% 100%;
+        }
+      }
     }
   }
 }
@@ -183,20 +231,33 @@
       <div class="three-l card">
         <div class="card-con article">
           <h2>圣诞节福利时间的福利四季度房价</h2>
+          <div class="article-btn">
+            <span>2019-03-21 09:12:31</span>
+            <span class="share-btn">
+              <img src="@/images/share.png" alt>
+              <span class="share-con">
+                <img src="@/images/wx.png" alt>
+                <img src="@/images/sina.png" alt>
+              </span>
+            </span>
+            <span class="btn_zan">
+              <i class="icon_zan"></i>32
+            </span>
+          </div>
           <p>圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿</p>
           <p>圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿</p>
           <p>圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿</p>
           <p>圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿</p>
           <p>圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿</p>
           <p>圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿圣诞节福利就是代理费了圣诞节福利数据的分类进酸辣粉死定了房间里撒大家发路撒地方阿里斯顿</p>
-          <img src="@/images/banner.png" alt="">
+          <img class="article-img" src="@/images/banner.png" alt>
         </div>
       </div>
 
       <div class="three-r card">
         <p class="card-title">
           每日特价
-          <span class="btn-more">more</span>
+          <span class="btn-more" @click="turnTo('flat')">more</span>
         </p>
         <div class="card-con">
           <ul class="shop-list">
@@ -246,6 +307,17 @@ export default {
     };
   },
   methods: {
+    turnTo(name, id = null) {
+      let params = null;
+      if (id) {
+        params = {
+          id: id
+        };
+      }
+      this.$router.push({
+        name: name
+      });
+    },
     handleSubmit() {
       console.log("a", this.objForm);
     }

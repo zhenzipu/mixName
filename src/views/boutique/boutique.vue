@@ -114,6 +114,7 @@
     font-size: 12px;
     color: #4e14d6;
     margin-top: 10px;
+    cursor: pointer;
   }
   .main-con {
     margin-top: 15px;
@@ -201,7 +202,7 @@
       }
     }
   }
-  .page{
+  .page {
     text-align: right;
     padding-right: 10px;
   }
@@ -279,6 +280,7 @@
               v-for="(item,idx) in aIndustry"
               :class="isActBtn(item)?'act-btn':''"
               :key="idx"
+              @click="handleAddItem(item)"
             >{{item.name}}</li>
           </ul>
         </div>
@@ -296,6 +298,7 @@
                   v-for="(item,idx) in aType.num"
                   :class="isActBtn(item)?'act-btn':''"
                   :key="idx"
+                  @click="handleAddItem(item)"
                 >{{item.name}}</li>
               </ul>
             </TabPane>
@@ -305,6 +308,7 @@
                   v-for="(item,idx) in aType.num"
                   :class="isActBtn(item)?'act-btn':''"
                   :key="idx"
+                  @click="handleAddItem(item)"
                 >{{item.name}}</li>
               </ul>
             </TabPane>
@@ -314,6 +318,7 @@
                   v-for="(item,idx) in aType.num"
                   :class="isActBtn(item)?'act-btn':''"
                   :key="idx"
+                  @click="handleAddItem(item)"
                 >{{item.name}}</li>
               </ul>
             </TabPane>
@@ -323,6 +328,7 @@
                   v-for="(item,idx) in aType.num"
                   :class="isActBtn(item)?'act-btn':''"
                   :key="idx"
+                  @click="handleAddItem(item)"
                 >{{item.name}}</li>
               </ul>
             </TabPane>
@@ -332,6 +338,7 @@
                   v-for="(item,idx) in aType.num"
                   :class="isActBtn(item)?'act-btn':''"
                   :key="idx"
+                  @click="handleAddItem(item)"
                 >{{item.name}}</li>
               </ul>
             </TabPane>
@@ -349,6 +356,7 @@
               v-for="(item,idx) in aLast"
               :class="isActBtn(item)?'act-btn':''"
               :key="idx"
+              @click="handleAddItem(item)"
             >{{item.name}}</li>
           </ul>
         </div>
@@ -466,8 +474,8 @@
 
       <div class="main-con-r card">
         <p class="card-title">
-          每日特价
-          <span class="btn-more">more</span>
+          快讯
+          <span class="btn-more" @click="turnTo('latest')">more</span>
         </p>
 
         <div class="card-con">
@@ -693,6 +701,18 @@ export default {
     };
   },
   methods: {
+    turnTo(name, id) {
+      let params = null;
+      if (id) {
+        params = {
+          id: id
+        };
+      }
+      this.$router.push({
+        name: name,
+        params: params
+      });
+    },
     isActBtn(target) {
       let res = this.aParams.some(item => {
         if (item.name == target.name) {
@@ -711,6 +731,11 @@ export default {
           id: obj.id
         }
       });
+    },
+    handleAddItem(item) {
+      if (!this.isActBtn(item)) {
+        this.aParams.push(item);
+      }
     },
     handleSort(type, e) {
       console.log(type, e);

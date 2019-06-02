@@ -35,6 +35,11 @@
             margin-top: 10px;
         }
       }
+
+      .code-con{
+        text-align: center;
+      }
+      
     }
     .copy-right {
       color: #fff;
@@ -90,7 +95,7 @@
               <li><img src="@/images/foot_icon/icon_xingqiu.png" alt=""></li>
           </ul>
         </li>
-        <li>
+        <li class="code-con">
           <p class="foot-title">关注公众号</p>
           <img class="code-img" src="@/images/foot_icon/code.png" alt="">
         </li>
