@@ -1,11 +1,11 @@
 let util = {};
-util.title = function(title) {
-  title = title ? "SmartIDC-" + title : "SmartIDC平台";
+util.title = function (title) {
+  title = title || 'MixName';
   window.document.title = title;
 };
 
 // 跳转路由
-util.turnTo = function(vm, name, id) {
+util.turnTo = function (vm, name, id) {
   let params = id ? { id: id } : {};
   vm.$router.push({
     name: name,
