@@ -1,15 +1,15 @@
 module.exports = {
-    // devServer: {
-    //     open: process.platform === 'darwin',
-    //     host: 'aaa',
-    //     port: 8091,
-    //     https: false,
-    //     hotOnly: false,
-    //     proxy: {
-    //         '/benchmark': {
-    //             target: 'http://aaa/',
-    //             changeOrigin: true
-    //         }
-    //     }
-    // }
+    devServer: {
+        open: process.platform === 'darwin',
+        host: 'localhost',
+        port: 8080,
+        https: false,
+        hotOnly: false,
+        proxy: {
+            '/webapi': {
+                target: 'http://api.mixname.com/webapi/',
+                changeOrigin: true
+            }
+        }
+    }
 };

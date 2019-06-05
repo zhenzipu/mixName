@@ -31,6 +31,18 @@ export const mainRouter = {
   ]
 };
 export const MenuRouter = [
+  // 淘域名
+  {
+    path: "/tao",
+    component: Main,
+    children: [
+      {
+        path: "index",
+        name: "tao",
+        component: () => import("@/views/tao/tao.vue")
+      }
+    ]
+  },
   // 精品域名
   {
     path: "/boutique",

@@ -13,9 +13,13 @@
     width: 1200px;
     margin: 0 auto;
     .logo-con {
-      margin-top: 30px;
+      margin-top: 25px;
+      margin-right: 20px;
       float: left;
       display: inline-block;
+      img{
+        height: 50px;
+      }
     }
     .head-menu {
       float: left;
@@ -91,7 +95,7 @@
   <div class="header-main">
     <div class="header-con">
       <a href="#/home" class="logo-con">
-        <img src="@/images/logo.png" alt>
+        <img src="@/images/logo_mini.png" alt>
       </a>
       <ul class="head-menu">
         <li
@@ -124,6 +128,10 @@ export default {
         {
           title: "首页",
           name: "home"
+        },
+        {
+          title: "淘域名",
+          name: "tao"
         },
         {
           title: "精品域名",

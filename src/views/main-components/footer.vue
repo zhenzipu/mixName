@@ -33,6 +33,8 @@
         // 二维码
         .code-img{
             margin-top: 10px;
+            width: 150px;
+            height: 150px;
         }
       }
 
@@ -100,7 +102,7 @@
           <img class="code-img" src="@/images/foot_icon/code.png" alt="">
         </li>
       </ul>
-      <p class="copy-right">Copyright © 2005-2018[域名商城] yuming Technology Co.，Ltd.京ICP备1803</p>
+      <!-- <p class="copy-right">Copyright © 2005-2018[域名商城] yuming Technology Co.，Ltd.京ICP备1803</p> -->
     </div>
   </div>
 </template>

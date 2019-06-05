@@ -157,11 +157,12 @@
   }
   .article {
     li {
+      border-left: 1px solid #ccc;
+      
       height: 190px;
-      padding: 20px 0;
+      padding: 20px 0 20px 20px;
       list-style: none;
       cursor: pointer;
-      border-bottom: 1px solid #ccc;
       .article-img {
         float: left;
         margin-right: 20px;
@@ -172,6 +173,8 @@
         }
       }
       .article-text {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
         // width: 560px;
         float: left;
         p:nth-child(1) {
@@ -226,7 +229,7 @@
       }
     }
     li:last-child {
-      border: none;
+      border-bottom: none;
     }
   }
 }
@@ -260,16 +263,17 @@
     <div class="latest-main">
       <div class="main-l card">
         <div class="card-con">
+          <p>今天：{{nowDate}}</p>
           <ul class="article">
             <li v-for="(item,idx) in articleList" :key="idx" @click="turnTo('news',idx)">
-              <div class="article-img" v-if="item.imgUrl">
+              <!-- <div class="article-img" v-if="item.imgUrl">
                 <img src="@/images/bg_card.png" alt>
-              </div>
+              </div> -->
               <div class="article-text" :style="{width:item.imgUrl?'560px':''}">
                 <p>{{item.title}}</p>
                 <p>{{item.con}}</p>
                 <p>
-                  <span>{{item.date}}</span>
+                  <span>查看详情</span>
                   <span class="share-btn">
                     <img src="@/images/share.png" alt>
                     <span class="share-con">
@@ -335,6 +339,7 @@ export default {
   name: "home",
   data() {
     return {
+      nowDate:'',
       // 提交信息
       objForm: {
         domain: "",
@@ -419,9 +424,57 @@ export default {
         name: name,
         params: params
       });
+    },
+        getDate() {
+      var d = new Date();
+      var y = d.getFullYear();
+      var m = d.getMonth() + 1;
+      var ds = d.getDate();
+      if (ds <= 9) {
+        ds = "0" + ds;
+      }
+      var h = d.getHours();
+      if (h <= 9) {
+        h = "0" + h;
+      }
+      var f = d.getMinutes();
+      if (f <= 9) {
+        f = "0" + f;
+      }
+      var s = d.getSeconds();
+      if (s <= 9) {
+        s = "0" + s;
+      }
+      var days = d.getDay();
+      switch (days) {
+        case 1:
+          days = "星期一";
+          break;
+        case 2:
+          days = "星期二";
+          break;
+        case 3:
+          days = "星期三";
+          break;
+        case 4:
+          days = "星期四";
+          break;
+        case 5:
+          days = "星期五";
+          break;
+        case 6:
+          days = "星期六";
+          break;
+        case 0:
+          days = "星期日";
+          break;
+      }
+      let str = m + "月" + ds + "日 " + days;
+      return str;
     }
   },
-  mounted() {}
+  mounted() {
+    this.nowDate = this.getDate();}
 };
 </script>
 

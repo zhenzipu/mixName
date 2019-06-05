@@ -281,8 +281,20 @@
       color: #999999;
     }
     ul {
-      margin-top: 30px;
+      margin-top: 15px;
       list-style: none;
+      li {
+        a{
+          p{
+            display: none;
+          }
+        }
+      }
+      li:hover{
+        p{
+          display: block;
+        }
+      }
     }
   }
 }
@@ -314,30 +326,34 @@
     </Carousel>
     <!-- 定位元素 -->
     <div class="fix-con">
-      <p>13522865253</p>
+      <p>18801099858</p>
       <p>7/24小时服务热线</p>
       <ul>
         <li>
           <a>
+            <img src="@/images/fix_icon3.png" alt>
+            <p>goodasset</p>
+          </a>
+        </li>
+        <li>
+          <a>
             <img src="@/images/fix_icon1.png" alt>
+            <p>01088011388</p>
           </a>
         </li>
         <li>
           <a>
             <img src="@/images/fix_icon2.png" alt>
-          </a>
-        </li>
-        <li>
-          <a>
-            <img src="@/images/fix_icon3.png" alt>
+            <p>01088011388</p>
           </a>
         </li>
         <li>
           <a>
             <img src="@/images/fix_icon4.png" alt>
+            <p>1582082615</p>
           </a>
         </li>
-        <li>
+        <li @click="handleScrollTop">
           <a>
             <img src="@/images/fix_icon5.png" alt>
           </a>
@@ -659,6 +675,9 @@ export default {
     };
   },
   methods: {
+    handleScrollTop(){
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    },
     handleSubmit() {
       console.log("a", this.objForm);
     },
@@ -673,9 +692,27 @@ export default {
         name: name,
         params: params
       });
+    },
+    // 轮播图
+    ajaxFetchImg(){
+        this.$store
+            .dispatch("ajaxPost", {
+              url: this.$api.getsolider+1
+            })
+            .then(res => {
+              let objData = res.data;
+              if (objData.status_code == 200) {
+                console.log(11,objData)
+                let objRes = objData.data;
+              } else {
+                Message.error(objData.message);
+              }
+            });
     }
   },
-  mounted() {}
+  mounted() {
+    this.ajaxFetchImg()
+  }
 };
 </script>
 

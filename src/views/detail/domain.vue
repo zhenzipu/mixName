@@ -123,18 +123,18 @@
   .home-three {
     height: 680px;
     margin-top: 15px;
-    > div {
-      float: left;
-    }
+    // > div {
+    //   float: left;
+    // }
     .three-l {
-      width: 895px;
-      margin-right: 15px;
+      width: 1200px;
+      // margin-right: 15px;
       height: 670px;
     }
-    .three-r {
-      height: 300px;
-      width: 290px;
-    }
+    // .three-r {
+    //   height: 300px;
+    //   width: 290px;
+    // }
   }
   .deatil {
     width: 1200px;
@@ -258,6 +258,7 @@
           价格:
           <b>￥{{detail.num}}</b>
         </p>
+        <p>域名描述:{{detail.dec}}</p>
         <p>域名行业:{{detail.tags.join('、')}}</p>
         <p>域名后缀:{{detail.last}}</p>
         <p>域名长度:{{detail.len}}</p>
@@ -306,12 +307,12 @@
           </ul>
         </div>
       </div>
-      <div class="three-r card">
+      <!-- <div class="three-r card">
         <div class="card-con article">
           <p class="article-title">{{info.title}}</p>
           <p class="article-con">{{info.con}}</p>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <Modal v-model="bModal" :width="400">
@@ -368,6 +369,7 @@ export default {
       detail: {
         name: "sdf.com",
         num: 234,
+        dec:'熟练度空间了圣诞节福利时代峻峰了圣诞节福利圣诞节放假了水电费',
         tags: ["金融投资", "区块链", "生活服务", "体育用品", "牌商标"],
         last: ".com",
         len: 6,

@@ -1,10 +1,8 @@
-const sign = "/smartIDC/v1/";
+const sign = "/webapi/";
 
 const API = {
-  // 首页
-  home: {
-    base: "asset/get_classify_count"
-  },
+  // 轮播图
+  getsolider: "getsolider/"
 };
 
 function getJson(obj) {

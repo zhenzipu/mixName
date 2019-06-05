@@ -122,18 +122,18 @@
         </li>
       </ul>
     </div>
+    <div class="console-5">
+        <p>交易所合作伙伴</p>
+        <img src="@/images/consult/consult5.png" alt="">
+    </div>
     <div class="console-3">
         <p>资本合作伙伴</p>
         <img src="@/images/consult/company.png" alt="">
-        <img src="@/images/consult/name.png" alt="">
+        <!-- <img src="@/images/consult/name.png" alt=""> -->
     </div>
     <div class="console-4">
         <p>媒体合作伙伴</p>
         <div></div>
-    </div>
-    <div class="console-5">
-        <p>交易所合作伙伴</p>
-        <img src="@/images/consult/consult5.png" alt="">
     </div>
   </div>
 </template>
